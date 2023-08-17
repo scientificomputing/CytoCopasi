@@ -28,9 +28,9 @@ Besides the regular ODE-based tasks, such as time course simulation and steady s
 
 ●	Windows, Linux, Unix, or MacOS operating system
 
-●	Cytoscape 3.8.+ https://cytoscape.org/ 
+●	Cytoscape 3.8. or above https://cytoscape.org/ 
 
-●	Java OpenJDK 11.0.14 
+●	Java OpenJDK 11.0.14 or above
 
 ### Important: Native Libraries
 
@@ -42,23 +42,43 @@ Work is underway to automate native library access. For the time being, before i
 
 #### How to see the current value of the java.library.path variable
 
-#### Windows
+Java.library.path usually contains multiple directories, but the user can copy the native library to any of them. For all OS types: Open Terminal and type
+java -XshowSettings:properties  
+(find the java.library.path section in the output)
+ 
+#### To Copy the Native Library to Your java.library.path:
+Download the application and supporting files from https://github.com/scientificomputing/CytoCopasi 
+Extract the folder from .zip
 
-Open an MS-DOS prompt and type
 
-echo %PATH%
+
+
 
 #### Mac OS X
 
-Console
+Go to CytoCopasi-main/Native Libraries/
+The correct type of Mac OS X native library depends on your Mac processor. If you are not sure, this [article](https://www.makeuseof.com/how-to-find-out-if-your-mac-uses-intel-or-apple-silicon/) explains how to find out
 
-java -XshowSettings:properties
+For intel (x64): go to Mac OS X (Intel)
+For M1/M2 chips: go to Mac OS X M1M2
+Open terminal
+sudo cp libCopasiJava.jnilib <the selected java.library.path directory>
+ex: sudo cp libCopasiJava.jnilib /Library/Java/Extensions
+Enter your user password when prompted.
+
+#### Windows
+
+Go to CytoCopasi-main/Native Libraries/Windows
+Run terminal (Windows PowerShell) as administrator (this option will appear when you right-click on the terminal icon.
+cp CopasiJava.dll <the selected java.library.path directory>
+
 
 #### Linux/Unix
 
-Terminal
+Go to CytoCopasi-main/Native Libraries/Linux
+Open terminal
+sudo cp libCopasiJava.so <selected java.library.path directory>
 
-java -XshowSettings:properties
 
 ### Installation
 
