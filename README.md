@@ -8,17 +8,17 @@ Besides the regular ODE-based tasks, such as time course simulation and steady s
 
 ●	Systems Biology Markup Language (SBML) support
 
-●	Ability to import local SBML files
+●	Import local SBML files
 
 ●	Direct connection to KEGG for importing pathways and converting them into SBML
 
-●	Ability to extract KEGG modules as subnetworks
+●	Extract KEGG modules as subnetworks
 
 ●	Supports BRENDA’s SOAP access for enzyme functional data queries
 
-●	Comparative systems biology analysis to visualize deviations between two reaction networks
+●	Comparative reaction network visual analytics 
 
-●	Perturbation analysis to visualize downstream effects of mutations or drug treatment
+●	Perturbation analysis capable of visualizing downstream effects due to mutations or drug treatment
 
 ●	Optional dynamic simulation via SBMLSimulator
 
