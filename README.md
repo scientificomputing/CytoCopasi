@@ -46,7 +46,7 @@ Java.library.path usually contains multiple directories, but the user can copy t
 
 For all OS types: Open Terminal and type
 
-java -XshowSettings:properties  
+        java -XshowSettings:properties  
 
 Find the java.library.path section in the output; it should look like below:
 
@@ -97,10 +97,11 @@ Find the java.library.path section in the output; it should look like below:
    
    For M1/M2 chips: open the folder Mac OS X M1M2
    
-● Open terminal
+● Open terminal and type:
 
-● sudo cp libCopasiJava.jnilib <the selected java.library.path directory>
-  ex: sudo cp libCopasiJava.jnilib /Library/Java/Extensions
+        sudo cp libCopasiJava.jnilib <the selected java.library.path directory>
+  ex: 
+        sudo cp libCopasiJava.jnilib /Library/Java/Extensions
   
 ● Enter your user password when prompted.
 
@@ -110,16 +111,16 @@ Find the java.library.path section in the output; it should look like below:
 
 ● Run terminal (Windows PowerShell) as administrator (this option will appear when you right-click on the terminal icon.
 
-  cp CopasiJava.dll <the selected java.library.path directory>
+          cp CopasiJava.dll <the selected java.library.path directory>
 
 
 #### Linux/Unix
 
 ● Go to CytoCopasi-main/Native Libraries/Linux
 
-● Open terminal
+● Open terminal and type
 
-● sudo cp libCopasiJava.so <selected java.library.path directory>
+        sudo cp libCopasiJava.so <selected java.library.path directory>
 
 
 ### Installation
