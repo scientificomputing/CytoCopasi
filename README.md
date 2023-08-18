@@ -50,7 +50,7 @@ java -XshowSettings:properties
 
 Find the java.library.path section in the output; it should look like below:
 
-java.library.path = C:\Program Files (x86)\Common Files\Oracle\Java\javapath
+        java.library.path = C:\Program Files (x86)\Common Files\Oracle\Java\javapath
 
         C:\windows\Sun\Java\bin
         
