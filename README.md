@@ -42,13 +42,15 @@ Work is underway to automate native library access. For the time being, before i
 
 #### How to see the current value of the java.library.path variable
 
-Java.library.path usually contains multiple directories, but the user can copy the native library to any of them. For all OS types: Open Terminal and type
+Java.library.path usually contains multiple directories, but the user can copy the native library to any of them. 
+
+For all OS types: Open Terminal and type
 java -XshowSettings:properties  
 (find the java.library.path section in the output)
  
 #### To Copy the Native Library to Your java.library.path:
-Download the application and supporting files from https://github.com/scientificomputing/CytoCopasi 
-Extract the folder from .zip
+● Download the application and supporting files from https://github.com/scientificomputing/CytoCopasi 
+● Extract the folder from .zip
 
 
 
