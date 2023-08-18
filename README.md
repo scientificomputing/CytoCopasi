@@ -51,20 +51,34 @@ java -XshowSettings:properties
 Find the java.library.path section in the output; it should look like below:
 
 java.library.path = C:\Program Files (x86)\Common Files\Oracle\Java\javapath
+
         C:\windows\Sun\Java\bin
+        
         C:\windows\system32
+        
         C:\windows
         C:\Program Files (x86)\Common Files\Oracle\Java\javapath
+        
         C:\Program Files\copasi.org\COPASI 4.40.278\bin
+        
         C:\windows\system32
+        
         C:\windows
+        
         C:\windows\System32\Wbem
+        
         C:\windows\System32\WindowsPowerShell\v1.0\
+        
         C:\windows\System32\OpenSSH\
+        
         C:\Users\27608\Downloads\apache-maven-3.9.0\bin
+        
         C:\Program Files\Git\cmd
+        
         C:\Program Files\Git LFS
+        
         C:\Users\27608\AppData\Local\Microsoft\WindowsApps
+        
         C:\Users\27608\AppData\Local\GitHubDesktop\bin
  
 #### To Copy the Native Library to Your java.library.path:
