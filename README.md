@@ -49,7 +49,8 @@ java -XshowSettings:properties
 (find the java.library.path section in the output)
  
 #### To Copy the Native Library to Your java.library.path:
-● Download the application and supporting files from https://github.com/scientificomputing/CytoCopasi 
+● Download the application and supporting files from https://github.com/scientificomputing/CytoCopasi
+
 ● Extract the folder from .zip
 
 
