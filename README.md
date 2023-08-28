@@ -82,9 +82,9 @@ Find the java.library.path section in the output; it should look like below:
         C:\Users\27608\AppData\Local\GitHubDesktop\bin
  
 #### To Copy the Native Library to Your java.library.path:
-● Download the application and supporting files from https://github.com/scientificomputing/CytoCopasi
+● Download the executable from the Releases section https://github.com/scientificomputing/CytoCopasi
 
-● Extract the folder from .zip
+● Download the additional files as .zip and extract them into a new folder, which will be named CytoCopasi-main
 
 
 #### Mac OS X
