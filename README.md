@@ -34,11 +34,10 @@ Besides the regular ODE-based tasks, such as time course simulation and steady s
 
 ### Important: Native Libraries
 
-The Native Libraries folder contains three native library files, .dll, jnilib, and .so for Windows, MacOS, and Linux/Unix, respectively.
+The CytoCopasi JAR file contains native library files CopasiJava.dll, libCopasiJava.jnilib, and libCopasiJava.so for Windows, MacOS, and Linux/Unix, respectively.
 
-Since COPASI is written in C++, COPASI classes are compiled into copasi.jar contained within the main bundle. However, this jar file will only work when the accompanying native library is in the java.library.path. 
+The recent version of CytoCopasi can load these libraries automatically during start up; however, should Cytoscape throw an "Unsatisfied Link Error", you can alternatively try to manually copy the appropriate native library to a directory in your java.library.path and restart Cytoscape.
 
-Work is underway to automate native library access. For the time being, before initializing CytoCopasi, make sure to copy the appropriate native file to a directory in your java.library.path
 
 #### How to see the current value of the java.library.path variable
 
