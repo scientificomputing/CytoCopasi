@@ -20,7 +20,7 @@ Besides the regular ODE-based tasks, such as time course simulation and steady s
 
 ●	Perturbation analysis capable of visualizing downstream effects due to mutations or drug treatment
 
-●	Optional dynamic simulation via SBMLSimulator
+
 
 ## Installation
 
