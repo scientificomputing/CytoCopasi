@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- generated with COPASI 4.44 (Build 295) (http://www.copasi.org) at 2024-09-12T14:26:22Z -->
+<!-- generated with COPASI 4.44 (Build 295) (http://www.copasi.org) at 2024-10-29T09:26:08Z -->
 <?oxygen RNGSchema="http://www.copasi.org/static/schema/CopasiML.rng" type="xml"?>
 <COPASI xmlns="http://www.copasi.org/static/schema" versionMajor="4" versionMinor="44" versionDevel="295" copasiSourcesModified="0">
   <ListOfFunctions>
@@ -19,24 +19,22 @@
         <ParameterDescription key="FunctionParameter_45" name="V" order="2" role="constant"/>
       </ListOfParameterDescriptions>
     </Function>
-    <Function key="Function_19" name="Noncompetitive inhibition (irr)" type="PreDefined" reversible="false">
+    <Function key="Function_41" name="Comp Inh with IC50" type="UserDefined" reversible="unspecified">
       <MiriamAnnotation>
-<rdf:RDF
-xmlns:dcterms="http://purl.org/dc/terms/"
-xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-<rdf:Description rdf:about="#Function_19">
+<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:Description rdf:about="#Function_41">
 </rdf:Description>
 </rdf:RDF>
       </MiriamAnnotation>
       <Expression>
-        V*substrate/((Km+substrate)*(1+Inhibitor/Ki))
+        (V*S)/((Km+S)*(1+(I/IC50)))
       </Expression>
       <ListOfParameterDescriptions>
-        <ParameterDescription key="FunctionParameter_119" name="substrate" order="0" role="substrate"/>
-        <ParameterDescription key="FunctionParameter_118" name="Inhibitor" order="1" role="modifier"/>
-        <ParameterDescription key="FunctionParameter_117" name="Km" order="2" role="constant"/>
-        <ParameterDescription key="FunctionParameter_116" name="V" order="3" role="constant"/>
-        <ParameterDescription key="FunctionParameter_115" name="Ki" order="4" role="constant"/>
+        <ParameterDescription key="FunctionParameter_275" name="V" order="0" role="constant"/>
+        <ParameterDescription key="FunctionParameter_274" name="S" order="1" role="substrate"/>
+        <ParameterDescription key="FunctionParameter_273" name="Km" order="2" role="constant"/>
+        <ParameterDescription key="FunctionParameter_272" name="I" order="3" role="modifier"/>
+        <ParameterDescription key="FunctionParameter_266" name="IC50" order="4" role="constant"/>
       </ListOfParameterDescriptions>
     </Function>
   </ListOfFunctions>
@@ -138,15 +136,19 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 </rdf:RDF>
         </MiriamAnnotation>
       </Metabolite>
-      <Metabolite key="Metabolite_9" name="Lith-O-Asp" simulationType="reactions" compartment="Compartment_0" addNoise="false">
+      <Metabolite key="Metabolite_9" name="Soy" simulationType="reactions" compartment="Compartment_0" addNoise="false">
+        <MiriamAnnotation>
+<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:Description rdf:about="#Metabolite_9">
+</rdf:Description>
+</rdf:RDF>
+        </MiriamAnnotation>
       </Metabolite>
     </ListOfMetabolites>
     <ListOfReactions>
       <Reaction key="Reaction_0" name="B3GNT3" reversible="false" fast="false" addNoise="false">
         <MiriamAnnotation>
-<rdf:RDF
-xmlns:dcterms="http://purl.org/dc/terms/"
-xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 <rdf:Description rdf:about="#Reaction_0">
 </rdf:Description>
 </rdf:RDF>
@@ -176,43 +178,43 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
         </KineticLaw>
       </Reaction>
       <Reaction key="Reaction_1" name="C1GALT1C1" reversible="false" fast="false" addNoise="false">
-        <MiriamAnnotation>
-<rdf:RDF
-xmlns:dcterms="http://purl.org/dc/terms/"
-xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-<rdf:Description rdf:about="#Reaction_1">
-</rdf:Description>
-</rdf:RDF>
-        </MiriamAnnotation>
         <ListOfSubstrates>
           <Substrate metabolite="Metabolite_2" stoichiometry="1"/>
         </ListOfSubstrates>
         <ListOfProducts>
           <Product metabolite="Metabolite_0" stoichiometry="1"/>
         </ListOfProducts>
+        <ListOfModifiers>
+          <Modifier metabolite="Metabolite_9" stoichiometry="1"/>
+        </ListOfModifiers>
         <ListOfConstants>
           <Constant key="Parameter_5525" name="Km" value="0.00035"/>
           <Constant key="Parameter_5528" name="V" value="0.000498171"/>
+          <Constant key="Parameter_6010" name="IC50" value="0.368"/>
         </ListOfConstants>
-        <KineticLaw function="Function_8" unitType="Default" scalingCompartment="CN=Root,Model=New Model,Vector=Compartments[compartment]">
+        <KineticLaw function="Function_41" unitType="Default" scalingCompartment="CN=Root,Model=New Model,Vector=Compartments[compartment]">
           <ListOfCallParameters>
-            <CallParameter functionParameter="FunctionParameter_47">
+            <CallParameter functionParameter="FunctionParameter_275">
+              <SourceParameter reference="Parameter_5528"/>
+            </CallParameter>
+            <CallParameter functionParameter="FunctionParameter_274">
               <SourceParameter reference="Metabolite_2"/>
             </CallParameter>
-            <CallParameter functionParameter="FunctionParameter_46">
+            <CallParameter functionParameter="FunctionParameter_273">
               <SourceParameter reference="Parameter_5525"/>
             </CallParameter>
-            <CallParameter functionParameter="FunctionParameter_45">
-              <SourceParameter reference="Parameter_5528"/>
+            <CallParameter functionParameter="FunctionParameter_272">
+              <SourceParameter reference="Metabolite_9"/>
+            </CallParameter>
+            <CallParameter functionParameter="FunctionParameter_266">
+              <SourceParameter reference="Parameter_6010"/>
             </CallParameter>
           </ListOfCallParameters>
         </KineticLaw>
       </Reaction>
       <Reaction key="Reaction_2" name="GCNT1" reversible="false" fast="false" addNoise="false">
         <MiriamAnnotation>
-<rdf:RDF
-xmlns:dcterms="http://purl.org/dc/terms/"
-xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 <rdf:Description rdf:about="#Reaction_2">
 </rdf:Description>
 </rdf:RDF>
@@ -224,8 +226,8 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
           <Product metabolite="Metabolite_3" stoichiometry="1"/>
         </ListOfProducts>
         <ListOfConstants>
-          <Constant key="Parameter_6010" name="Km" value="5.2"/>
-          <Constant key="Parameter_6011" name="V" value="1.62e-05"/>
+          <Constant key="Parameter_6011" name="Km" value="5.2"/>
+          <Constant key="Parameter_6013" name="V" value="1.62e-05"/>
         </ListOfConstants>
         <KineticLaw function="Function_8" unitType="Default" scalingCompartment="CN=Root,Model=New Model,Vector=Compartments[compartment]">
           <ListOfCallParameters>
@@ -233,19 +235,17 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
               <SourceParameter reference="Metabolite_0"/>
             </CallParameter>
             <CallParameter functionParameter="FunctionParameter_46">
-              <SourceParameter reference="Parameter_6010"/>
+              <SourceParameter reference="Parameter_6011"/>
             </CallParameter>
             <CallParameter functionParameter="FunctionParameter_45">
-              <SourceParameter reference="Parameter_6011"/>
+              <SourceParameter reference="Parameter_6013"/>
             </CallParameter>
           </ListOfCallParameters>
         </KineticLaw>
       </Reaction>
       <Reaction key="Reaction_3" name="POC1B-GALNT4" reversible="false" fast="false" addNoise="false">
         <MiriamAnnotation>
-<rdf:RDF
-xmlns:dcterms="http://purl.org/dc/terms/"
-xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 <rdf:Description rdf:about="#Reaction_3">
 </rdf:Description>
 </rdf:RDF>
@@ -257,8 +257,8 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
           <Product metabolite="Metabolite_2" stoichiometry="1"/>
         </ListOfProducts>
         <ListOfConstants>
-          <Constant key="Parameter_6013" name="Km" value="0.92"/>
-          <Constant key="Parameter_6009" name="V" value="0.000106793"/>
+          <Constant key="Parameter_6009" name="Km" value="0.92"/>
+          <Constant key="Parameter_6012" name="V" value="0.000106793"/>
         </ListOfConstants>
         <KineticLaw function="Function_8" unitType="Default" scalingCompartment="CN=Root,Model=New Model,Vector=Compartments[compartment]">
           <ListOfCallParameters>
@@ -266,15 +266,23 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
               <SourceParameter reference="Metabolite_4"/>
             </CallParameter>
             <CallParameter functionParameter="FunctionParameter_46">
-              <SourceParameter reference="Parameter_6013"/>
+              <SourceParameter reference="Parameter_6009"/>
             </CallParameter>
             <CallParameter functionParameter="FunctionParameter_45">
-              <SourceParameter reference="Parameter_6009"/>
+              <SourceParameter reference="Parameter_6012"/>
             </CallParameter>
           </ListOfCallParameters>
         </KineticLaw>
       </Reaction>
       <Reaction key="Reaction_4" name="ST3GAL1" reversible="false" fast="false" addNoise="false">
+        <MiriamAnnotation>
+<rdf:RDF
+xmlns:dcterms="http://purl.org/dc/terms/"
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:Description rdf:about="#Reaction_4">
+</rdf:Description>
+</rdf:RDF>
+        </MiriamAnnotation>
         <ListOfSubstrates>
           <Substrate metabolite="Metabolite_0" stoichiometry="1"/>
         </ListOfSubstrates>
@@ -285,35 +293,33 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
           <Modifier metabolite="Metabolite_9" stoichiometry="1"/>
         </ListOfModifiers>
         <ListOfConstants>
-          <Constant key="Parameter_6012" name="Km" value="0.018"/>
-          <Constant key="Parameter_6845" name="V" value="7.55098e-06"/>
-          <Constant key="Parameter_6490" name="Ki" value="0.037"/>
+          <Constant key="Parameter_6845" name="Km" value="0.018"/>
+          <Constant key="Parameter_6846" name="V" value="7.55098e-06"/>
+          <Constant key="Parameter_6848" name="IC50" value="0.031"/>
         </ListOfConstants>
-        <KineticLaw function="Function_19" unitType="Default" scalingCompartment="CN=Root,Model=New Model,Vector=Compartments[compartment]">
+        <KineticLaw function="Function_41" unitType="Default" scalingCompartment="CN=Root,Model=New Model,Vector=Compartments[compartment]">
           <ListOfCallParameters>
-            <CallParameter functionParameter="FunctionParameter_119">
+            <CallParameter functionParameter="FunctionParameter_275">
+              <SourceParameter reference="Parameter_6846"/>
+            </CallParameter>
+            <CallParameter functionParameter="FunctionParameter_274">
               <SourceParameter reference="Metabolite_0"/>
             </CallParameter>
-            <CallParameter functionParameter="FunctionParameter_118">
-              <SourceParameter reference="Metabolite_9"/>
-            </CallParameter>
-            <CallParameter functionParameter="FunctionParameter_117">
-              <SourceParameter reference="Parameter_6012"/>
-            </CallParameter>
-            <CallParameter functionParameter="FunctionParameter_116">
+            <CallParameter functionParameter="FunctionParameter_273">
               <SourceParameter reference="Parameter_6845"/>
             </CallParameter>
-            <CallParameter functionParameter="FunctionParameter_115">
-              <SourceParameter reference="Parameter_6490"/>
+            <CallParameter functionParameter="FunctionParameter_272">
+              <SourceParameter reference="Metabolite_9"/>
+            </CallParameter>
+            <CallParameter functionParameter="FunctionParameter_266">
+              <SourceParameter reference="Parameter_6848"/>
             </CallParameter>
           </ListOfCallParameters>
         </KineticLaw>
       </Reaction>
       <Reaction key="Reaction_5" name="ST6GALNAC1" reversible="false" fast="false" addNoise="false">
         <MiriamAnnotation>
-<rdf:RDF
-xmlns:dcterms="http://purl.org/dc/terms/"
-xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 <rdf:Description rdf:about="#Reaction_5">
 </rdf:Description>
 </rdf:RDF>
@@ -325,8 +331,8 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
           <Product metabolite="Metabolite_6" stoichiometry="1"/>
         </ListOfProducts>
         <ListOfConstants>
-          <Constant key="Parameter_6846" name="Km" value="2.93"/>
-          <Constant key="Parameter_6848" name="V" value="0.000105115"/>
+          <Constant key="Parameter_6844" name="Km" value="2.93"/>
+          <Constant key="Parameter_6847" name="V" value="0.000105115"/>
         </ListOfConstants>
         <KineticLaw function="Function_8" unitType="Default" scalingCompartment="CN=Root,Model=New Model,Vector=Compartments[compartment]">
           <ListOfCallParameters>
@@ -334,19 +340,17 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
               <SourceParameter reference="Metabolite_2"/>
             </CallParameter>
             <CallParameter functionParameter="FunctionParameter_46">
-              <SourceParameter reference="Parameter_6846"/>
+              <SourceParameter reference="Parameter_6844"/>
             </CallParameter>
             <CallParameter functionParameter="FunctionParameter_45">
-              <SourceParameter reference="Parameter_6848"/>
+              <SourceParameter reference="Parameter_6847"/>
             </CallParameter>
           </ListOfCallParameters>
         </KineticLaw>
       </Reaction>
       <Reaction key="Reaction_6" name="ST6GALNAC2__a" reversible="false" fast="false" addNoise="false">
         <MiriamAnnotation>
-<rdf:RDF
-xmlns:dcterms="http://purl.org/dc/terms/"
-xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 <rdf:Description rdf:about="#Reaction_6">
 </rdf:Description>
 </rdf:RDF>
@@ -358,8 +362,8 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
           <Product metabolite="Metabolite_7" stoichiometry="1"/>
         </ListOfProducts>
         <ListOfConstants>
-          <Constant key="Parameter_6844" name="Km" value="2.93"/>
-          <Constant key="Parameter_6847" name="V" value="7.39694e-06"/>
+          <Constant key="Parameter_4426" name="Km" value="2.93"/>
+          <Constant key="Parameter_4427" name="V" value="7.39694e-06"/>
         </ListOfConstants>
         <KineticLaw function="Function_8" unitType="Default" scalingCompartment="CN=Root,Model=New Model,Vector=Compartments[compartment]">
           <ListOfCallParameters>
@@ -367,19 +371,17 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
               <SourceParameter reference="Metabolite_0"/>
             </CallParameter>
             <CallParameter functionParameter="FunctionParameter_46">
-              <SourceParameter reference="Parameter_6844"/>
+              <SourceParameter reference="Parameter_4426"/>
             </CallParameter>
             <CallParameter functionParameter="FunctionParameter_45">
-              <SourceParameter reference="Parameter_6847"/>
+              <SourceParameter reference="Parameter_4427"/>
             </CallParameter>
           </ListOfCallParameters>
         </KineticLaw>
       </Reaction>
       <Reaction key="Reaction_7" name="ST6GALNAC2__b" reversible="false" fast="false" addNoise="false">
         <MiriamAnnotation>
-<rdf:RDF
-xmlns:dcterms="http://purl.org/dc/terms/"
-xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 <rdf:Description rdf:about="#Reaction_7">
 </rdf:Description>
 </rdf:RDF>
@@ -391,8 +393,8 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
           <Product metabolite="Metabolite_8" stoichiometry="1"/>
         </ListOfProducts>
         <ListOfConstants>
-          <Constant key="Parameter_4426" name="Km" value="2.93"/>
-          <Constant key="Parameter_4427" name="V" value="1.40954e-05"/>
+          <Constant key="Parameter_4429" name="Km" value="2.93"/>
+          <Constant key="Parameter_4425" name="V" value="1.40954e-05"/>
         </ListOfConstants>
         <KineticLaw function="Function_8" unitType="Default" scalingCompartment="CN=Root,Model=New Model,Vector=Compartments[compartment]">
           <ListOfCallParameters>
@@ -400,10 +402,10 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
               <SourceParameter reference="Metabolite_5"/>
             </CallParameter>
             <CallParameter functionParameter="FunctionParameter_46">
-              <SourceParameter reference="Parameter_4426"/>
+              <SourceParameter reference="Parameter_4429"/>
             </CallParameter>
             <CallParameter functionParameter="FunctionParameter_45">
-              <SourceParameter reference="Parameter_4427"/>
+              <SourceParameter reference="Parameter_4425"/>
             </CallParameter>
           </ListOfCallParameters>
         </KineticLaw>
@@ -435,7 +437,7 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
           <ModelParameter cn="CN=Root,Model=New Model,Vector=Compartments[compartment],Vector=Metabolites[MUCSTn]" value="0" type="Species" simulationType="reactions"/>
           <ModelParameter cn="CN=Root,Model=New Model,Vector=Compartments[compartment],Vector=Metabolites[MUC6ST]" value="0" type="Species" simulationType="reactions"/>
           <ModelParameter cn="CN=Root,Model=New Model,Vector=Compartments[compartment],Vector=Metabolites[MUCdST]" value="0" type="Species" simulationType="reactions"/>
-          <ModelParameter cn="CN=Root,Model=New Model,Vector=Compartments[compartment],Vector=Metabolites[Lith-O-Asp]" value="6.02214076e+18" type="Species" simulationType="reactions"/>
+          <ModelParameter cn="CN=Root,Model=New Model,Vector=Compartments[compartment],Vector=Metabolites[Soy]" value="0" type="Species" simulationType="reactions"/>
         </ModelParameterGroup>
         <ModelParameterGroup cn="String=Initial Global Quantities" type="Group">
         </ModelParameterGroup>
@@ -447,6 +449,7 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
           <ModelParameterGroup cn="CN=Root,Model=New Model,Vector=Reactions[C1GALT1C1]" type="Reaction">
             <ModelParameter cn="CN=Root,Model=New Model,Vector=Reactions[C1GALT1C1],ParameterGroup=Parameters,Parameter=Km" value="0.00035" type="ReactionParameter" simulationType="fixed"/>
             <ModelParameter cn="CN=Root,Model=New Model,Vector=Reactions[C1GALT1C1],ParameterGroup=Parameters,Parameter=V" value="0.00049817100000000005" type="ReactionParameter" simulationType="fixed"/>
+            <ModelParameter cn="CN=Root,Model=New Model,Vector=Reactions[C1GALT1C1],ParameterGroup=Parameters,Parameter=IC50" value="0.36799999999999999" type="ReactionParameter" simulationType="fixed"/>
           </ModelParameterGroup>
           <ModelParameterGroup cn="CN=Root,Model=New Model,Vector=Reactions[GCNT1]" type="Reaction">
             <ModelParameter cn="CN=Root,Model=New Model,Vector=Reactions[GCNT1],ParameterGroup=Parameters,Parameter=Km" value="5.2000000000000002" type="ReactionParameter" simulationType="fixed"/>
@@ -459,7 +462,7 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
           <ModelParameterGroup cn="CN=Root,Model=New Model,Vector=Reactions[ST3GAL1]" type="Reaction">
             <ModelParameter cn="CN=Root,Model=New Model,Vector=Reactions[ST3GAL1],ParameterGroup=Parameters,Parameter=Km" value="0.017999999999999999" type="ReactionParameter" simulationType="fixed"/>
             <ModelParameter cn="CN=Root,Model=New Model,Vector=Reactions[ST3GAL1],ParameterGroup=Parameters,Parameter=V" value="7.5509799999999997e-06" type="ReactionParameter" simulationType="fixed"/>
-            <ModelParameter cn="CN=Root,Model=New Model,Vector=Reactions[ST3GAL1],ParameterGroup=Parameters,Parameter=Ki" value="0.036999999999999998" type="ReactionParameter" simulationType="fixed"/>
+            <ModelParameter cn="CN=Root,Model=New Model,Vector=Reactions[ST3GAL1],ParameterGroup=Parameters,Parameter=IC50" value="0.031" type="ReactionParameter" simulationType="fixed"/>
           </ModelParameterGroup>
           <ModelParameterGroup cn="CN=Root,Model=New Model,Vector=Reactions[ST6GALNAC1]" type="Reaction">
             <ModelParameter cn="CN=Root,Model=New Model,Vector=Reactions[ST6GALNAC1],ParameterGroup=Parameters,Parameter=Km" value="2.9300000000000002" type="ReactionParameter" simulationType="fixed"/>
@@ -491,7 +494,7 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
       <StateTemplateVariable objectReference="Compartment_0"/>
     </StateTemplate>
     <InitialState type="initialState">
-      0 0 0 0 0 0 0 0 0 9.7265754412443993e+21 6.02214076e+18 1 
+      0 0 0 0 0 0 0 0 0 9.7265754412443993e+21 0 1 
     </InitialState>
   </Model>
   <ListOfTasks>
