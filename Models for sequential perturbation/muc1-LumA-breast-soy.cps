@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- generated with COPASI 4.44 (Build 295) (http://www.copasi.org) at 2024-10-29T09:26:08Z -->
+<!-- generated with COPASI 4.44 (Build 295) (http://www.copasi.org) at 2024-12-09T15:13:10Z -->
 <?oxygen RNGSchema="http://www.copasi.org/static/schema/CopasiML.rng" type="xml"?>
 <COPASI xmlns="http://www.copasi.org/static/schema" versionMajor="4" versionMinor="44" versionDevel="295" copasiSourcesModified="0">
   <ListOfFunctions>
@@ -178,6 +178,14 @@
         </KineticLaw>
       </Reaction>
       <Reaction key="Reaction_1" name="C1GALT1C1" reversible="false" fast="false" addNoise="false">
+        <MiriamAnnotation>
+<rdf:RDF
+xmlns:dcterms="http://purl.org/dc/terms/"
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:Description rdf:about="#Reaction_1">
+</rdf:Description>
+</rdf:RDF>
+        </MiriamAnnotation>
         <ListOfSubstrates>
           <Substrate metabolite="Metabolite_2" stoichiometry="1"/>
         </ListOfSubstrates>
@@ -276,9 +284,7 @@
       </Reaction>
       <Reaction key="Reaction_4" name="ST3GAL1" reversible="false" fast="false" addNoise="false">
         <MiriamAnnotation>
-<rdf:RDF
-xmlns:dcterms="http://purl.org/dc/terms/"
-xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 <rdf:Description rdf:about="#Reaction_4">
 </rdf:Description>
 </rdf:RDF>
@@ -437,7 +443,7 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
           <ModelParameter cn="CN=Root,Model=New Model,Vector=Compartments[compartment],Vector=Metabolites[MUCSTn]" value="0" type="Species" simulationType="reactions"/>
           <ModelParameter cn="CN=Root,Model=New Model,Vector=Compartments[compartment],Vector=Metabolites[MUC6ST]" value="0" type="Species" simulationType="reactions"/>
           <ModelParameter cn="CN=Root,Model=New Model,Vector=Compartments[compartment],Vector=Metabolites[MUCdST]" value="0" type="Species" simulationType="reactions"/>
-          <ModelParameter cn="CN=Root,Model=New Model,Vector=Compartments[compartment],Vector=Metabolites[Soy]" value="0" type="Species" simulationType="reactions"/>
+          <ModelParameter cn="CN=Root,Model=New Model,Vector=Compartments[compartment],Vector=Metabolites[Soy]" value="6.02214076e+18" type="Species" simulationType="reactions"/>
         </ModelParameterGroup>
         <ModelParameterGroup cn="String=Initial Global Quantities" type="Group">
         </ModelParameterGroup>
@@ -494,7 +500,7 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
       <StateTemplateVariable objectReference="Compartment_0"/>
     </StateTemplate>
     <InitialState type="initialState">
-      0 0 0 0 0 0 0 0 0 9.7265754412443993e+21 0 1 
+      0 0 0 0 0 0 0 0 0 9.7265754412443993e+21 6.02214076e+18 1 
     </InitialState>
   </Model>
   <ListOfTasks>

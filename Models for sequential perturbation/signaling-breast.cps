@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- generated with COPASI 4.44 (Build 295) (http://www.copasi.org) at 2024-10-18T11:15:38Z -->
+<!-- generated with COPASI 4.44 (Build 295) (http://www.copasi.org) at 2024-12-09T15:12:44Z -->
 <?oxygen RNGSchema="http://www.copasi.org/static/schema/CopasiML.rng" type="xml"?>
 <COPASI xmlns="http://www.copasi.org/static/schema" versionMajor="4" versionMinor="44" versionDevel="295" copasiSourcesModified="0">
   <ListOfFunctions>
@@ -265,6 +265,14 @@ Reaction scheme where the products are created from the reactants and the change
     </ListOfMetabolites>
     <ListOfReactions>
       <Reaction key="Reaction_0" name="R1" reversible="false" fast="false" addNoise="false">
+        <MiriamAnnotation>
+<rdf:RDF
+xmlns:dcterms="http://purl.org/dc/terms/"
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:Description rdf:about="#Reaction_0">
+</rdf:Description>
+</rdf:RDF>
+        </MiriamAnnotation>
         <ListOfSubstrates>
           <Substrate metabolite="Metabolite_0" stoichiometry="1"/>
           <Substrate metabolite="Metabolite_2" stoichiometry="1"/>
@@ -346,7 +354,9 @@ Reaction scheme where the products are created from the reactants and the change
       </Reaction>
       <Reaction key="Reaction_3" name="R4" reversible="false" fast="false" addNoise="false">
         <MiriamAnnotation>
-<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:RDF
+xmlns:dcterms="http://purl.org/dc/terms/"
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 <rdf:Description rdf:about="#Reaction_3">
 </rdf:Description>
 </rdf:RDF>
@@ -461,7 +471,9 @@ Reaction scheme where the products are created from the reactants and the change
       </Reaction>
       <Reaction key="Reaction_7" name="R10" reversible="false" fast="false" addNoise="false">
         <MiriamAnnotation>
-<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:RDF
+xmlns:dcterms="http://purl.org/dc/terms/"
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 <rdf:Description rdf:about="#Reaction_7">
 </rdf:Description>
 </rdf:RDF>
@@ -491,7 +503,9 @@ Reaction scheme where the products are created from the reactants and the change
       </Reaction>
       <Reaction key="Reaction_8" name="R11" reversible="false" fast="false" addNoise="false">
         <MiriamAnnotation>
-<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:RDF
+xmlns:dcterms="http://purl.org/dc/terms/"
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 <rdf:Description rdf:about="#Reaction_8">
 </rdf:Description>
 </rdf:RDF>
@@ -521,7 +535,9 @@ Reaction scheme where the products are created from the reactants and the change
       </Reaction>
       <Reaction key="Reaction_9" name="R12" reversible="false" fast="false" addNoise="false">
         <MiriamAnnotation>
-<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:RDF
+xmlns:dcterms="http://purl.org/dc/terms/"
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 <rdf:Description rdf:about="#Reaction_9">
 </rdf:Description>
 </rdf:RDF>
@@ -642,7 +658,9 @@ Reaction scheme where the products are created from the reactants and the change
       </Reaction>
       <Reaction key="Reaction_13" name="R16" reversible="false" fast="false" addNoise="false">
         <MiriamAnnotation>
-<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:RDF
+xmlns:dcterms="http://purl.org/dc/terms/"
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 <rdf:Description rdf:about="#Reaction_13">
 </rdf:Description>
 </rdf:RDF>
@@ -788,7 +806,9 @@ Reaction scheme where the products are created from the reactants and the change
       </Reaction>
       <Reaction key="Reaction_18" name="R21" reversible="false" fast="false" addNoise="false">
         <MiriamAnnotation>
-<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:RDF
+xmlns:dcterms="http://purl.org/dc/terms/"
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 <rdf:Description rdf:about="#Reaction_18">
 </rdf:Description>
 </rdf:RDF>
@@ -1072,7 +1092,9 @@ Reaction scheme where the products are created from the reactants and the change
       </Reaction>
       <Reaction key="Reaction_28" name="R40" reversible="false" fast="false" addNoise="false">
         <MiriamAnnotation>
-<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:RDF
+xmlns:dcterms="http://purl.org/dc/terms/"
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 <rdf:Description rdf:about="#Reaction_28">
 </rdf:Description>
 </rdf:RDF>
